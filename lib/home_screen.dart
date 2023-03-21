@@ -10,6 +10,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        leading: null,
+        title: const Text('API Fetch TDD'),
+      ),
+      body: Center(
+        child: FutureBuilder(builder: (context, snapshot) {
+          return const CircularProgressIndicator();
+        }),
+      ),
+    );
   }
 }
