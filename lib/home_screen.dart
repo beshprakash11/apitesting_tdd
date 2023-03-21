@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     books = fetchBooks(http.Client());
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,15 +28,17 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Center(
         child: FutureBuilder<List<BooksListModel>>(
-          future: books,
-          builder: (context, snapshot) {
-          if(snapshot.hasData){
-
-          }else if (snapshot.hasError){
-            return Text('${snapshot.error}');
-          }
-          return const CircularProgressIndicator();
-        }),
+            future: books,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return ListView.builder(
+                    itemCount: snapshot.data?.length,
+                    itemBuilder: (context, index) {});
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              return const CircularProgressIndicator();
+            }),
       ),
     );
   }
