@@ -19,7 +19,11 @@ class MyApp extends StatelessWidget {
           leading: null,
           title: const Text('API Fetch TDD'),
         ),
-        body: const Text('Flutter API TDD'),
+        body: Center(
+          child: FutureBuilder(builder: (context, snapshot) {
+            return const CircularProgressIndicator();
+          }),
+        ),
       ),
     );
   }
