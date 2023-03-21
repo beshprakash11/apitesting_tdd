@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          leading: null,
+          title: const Text('API Fetch TDD'),
+        ),
         body: const Text('Flutter API TDD'),
       ),
     );
