@@ -11,11 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'API TDD',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Text('Flutter API TDD'),
+      home: Scaffold(
+        body: const Text('Flutter API TDD'),
+      ),
     );
   }
 }
