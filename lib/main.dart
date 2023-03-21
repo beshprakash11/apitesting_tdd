@@ -14,17 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          leading: null,
-          title: const Text('API Fetch TDD'),
-        ),
-        body: Center(
-          child: FutureBuilder(builder: (context, snapshot) {
-            return const CircularProgressIndicator();
-          }),
-        ),
-      ),
+      home: ,
     );
   }
 }
