@@ -26,8 +26,14 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('API Fetch TDD'),
       ),
       body: Center(
-        child: FutureBuilder<List<BooksListModel>>(builder: (context, snapshot) {
-          
+        child: FutureBuilder<List<BooksListModel>>(
+          future: books,
+          builder: (context, snapshot) {
+          if(snapshot.hasData){
+
+          }else if (snapshot.hasError){
+            return Text('${snapshot.error}');
+          }
           return const CircularProgressIndicator();
         }),
       ),
