@@ -32,8 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
-                    itemCount: snapshot.data?.length,
-                    itemBuilder: (context, index) {});
+                  itemCount: snapshot.data?.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(snapshot.data?[index].name ?? ''),
+                      subtitle: Text(snapshot.data?[index].auther ?? ''),
+                    );
+                  },
+                );
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
               }
