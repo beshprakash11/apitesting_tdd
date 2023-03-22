@@ -1,3 +1,4 @@
+import 'package:apitesting_tdd/book_model.dart';
 import 'package:apitesting_tdd/fetch_book.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
@@ -11,7 +12,7 @@ void main() {
   //Fetch Books api call test
   group('Fetch Books api call test', () {
     //Should return list of books for http success call
-    test('Should return list of books for http success call', () {
+    test('Should return list of books for http success call', () async{
       //ARRANGE
       final mockClint = MockClient();
 
@@ -19,6 +20,9 @@ void main() {
         (realInvocation) async => http.Response(
             '[{"name": "The 5 Second Rule","auther": "Mel Robbins"}]', 200),
       );
+
+      //ACT & ASSERT
+      expect(await fetchBooks(mockClint), isA<List<BooksListModel>>());
     });
   });
 }
