@@ -12,14 +12,12 @@ void main() {
   group('Fetch Books api call test', () {
     //Should return list of books for http success call
     test('Should return list of books for http success call', () {
+      //ARRANGE
       final mockClint = MockClient();
 
-      when(
-        mockClint.get(
-          Uri.parse(fetchBooksURL),
-        ),
-      ).thenAnswer(
-        (realInvocation) async => http.Response('', 200),
+      when(mockClint.get(Uri.parse(fetchBooksURL))).thenAnswer(
+        (realInvocation) async => http.Response(
+            '[{"name": "The 5 Second Rule","auther": "Mel Robbins"}]', 200),
       );
     });
   });
