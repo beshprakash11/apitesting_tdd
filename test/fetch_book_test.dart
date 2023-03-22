@@ -26,6 +26,14 @@ void main() {
     });
 
     //Should throw an exception when http api call finished with and error
-    test('Should throw an exception when http api call finished with and error', (){});
+    test('Should throw an exception when http api call finished with and error', (){
+      //ARRANGE
+      final mockClint = MockClient();
+      when(mockClint.get(Uri.parse(fetchBooksURL))).thenAnswer(
+        (realInvocation) async => http.Response(
+            'Not found', 404),
+      );
+
+    });
   });
 }
