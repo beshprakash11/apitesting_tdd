@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:apitesting_tdd/book_model.dart';
 import 'package:apitesting_tdd/fetch_book.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,6 +11,10 @@ import 'fetch_book_test.mocks.dart';
 
 @GenerateMocks([http.Client])
 void main() {
+  late MockClient mockClient;
+  setUp(() {
+    mockClient = MockClient();
+  });
   //Fetch Books api call test
   group('Fetch Books api call test', () {
     //Should return list of books for http success call
