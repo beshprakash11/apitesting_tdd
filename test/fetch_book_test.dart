@@ -12,9 +12,15 @@ import 'fetch_book_test.mocks.dart';
 @GenerateMocks([http.Client])
 void main() {
   late MockClient mockClient;
+
   setUp(() {
     mockClient = MockClient();
   });
+
+  tearDown(() {
+    mockClient = MockClient();
+  });
+
   //Fetch Books api call test
   group('Fetch Books api call test', () {
     //Should return list of books for http success call
