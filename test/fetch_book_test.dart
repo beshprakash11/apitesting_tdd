@@ -18,7 +18,7 @@ void main() {
   });
 
   tearDown(() {
-    mockClient = MockClient();
+    mockClient.close();
   });
 
   //Fetch Books api call test
