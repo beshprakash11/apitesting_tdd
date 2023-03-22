@@ -24,5 +24,8 @@ void main() {
       //ACT & ASSERT
       expect(await fetchBooks(mockClint), isA<List<BooksListModel>>());
     });
+
+    //Should throw an exception when http api call finished with and error
+    test('Should throw an exception when http api call finished with and error', (){});
   });
 }
